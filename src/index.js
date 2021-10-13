@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const movies = require("./data/movies.json");
+const users = require("./data/users.json");
 
 // create and config server
 const server = express();
@@ -20,6 +21,10 @@ server.get("/movies", (req, res) => {
     movies,
   };
   res.json(response);
+});
+
+server.post("/users", (req, res) => {
+  console.log(req.body);
 });
 
 // STATIC SERVER: listen files in public folder
