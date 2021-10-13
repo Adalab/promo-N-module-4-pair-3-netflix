@@ -21,3 +21,11 @@ server.get("/movies", (req, res) => {
   };
   res.json(response);
 });
+
+// STATIC SERVER: listen files in public folder
+const staticServerPath = "./src/public-react"; // relative to the root of the project
+server.use(express.static(staticServerPath));
+
+// STATIC SERVER IMG: listen files in public folder
+const staticServerImgPath = "./src/public-movies-images"; // relative to the root of the project
+server.use(express.static(staticServerImgPath));
