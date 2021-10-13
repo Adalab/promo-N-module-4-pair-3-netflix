@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-// const movies = require('./movies.json');
+const express = require("express");
+const cors = require("cors");
+const movies = require("./data/movies.json");
 
 // create and config server
 const server = express();
@@ -15,25 +15,9 @@ server.listen(serverPort, () => {
 
 // API
 server.get("/movies", (req, res) => {
-
-
-
-	const response= {
-  success: true,
-  movies: [
-    {
-      id: '1',
-      title: 'Gambita de dama',
-      gender: 'Drama',
-      image: 'https://via.placeholder.com/150'
-    },
-    {
-      id: '2',
-      title: 'Friends',
-      gender: 'Comedia',
-      image: 'https://via.placeholder.com/150'
-    }
-  ]
-}
-res.json(response); 
-})
+  const response = {
+    success: true,
+    movies,
+  };
+  res.json(response);
+});
