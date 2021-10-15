@@ -22,9 +22,8 @@ server.set("view engine", "ejs");
 // API
 server.get("/movies", (req, res) => {
   const query = db.prepare("SELECT * FROM movies");
-  const movies = query.all();
-  console.log(movies);
-  res.json(movies);
+  const moviesBD = query.all();
+  res.json({ movies: moviesBD });
 });
 
 server.post("/users", (req, res) => {
